@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Magic Carpet"
+id = "SLES-00211"
+players = 1
+exe = "disc/SLES_002.11"
+disc = "disc/Magic Carpet (Europe) (En,Fr,De,Es,Sv).cue"
+discs = ["disc/Magic Carpet (Europe) (En,Fr,De,Es,Sv).cue"]
+disc_serials = ["SLES-00211"]
+load_address = "0x80010000"
+entry_pc = "0x80066E14"
+text_size = "0x0011B800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Magic Carpet (Europe) (En,Fr,De,Es,Sv) (Track 1).bin"
+cue_name = "Magic Carpet (Europe) (En,Fr,De,Es,Sv).cue"
+boot_exe = "SLES_002.11"
+known_sizes = [122266368]
+known_md5 = [
+  "43f519094389f523147a81aff7a20046",
+]
+known_sha1 = [
+  "e017102d95d3d838e1468d3fb14974f5012cb94b",
+]
+known_crc32 = [
+  "c2cb0eaf",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Magic Carpet Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 9
+required_disc_fp = "b0cdade1692e73a5a59358c47b87f44c8d5233a7adf6d2cdf7047963850b930d"

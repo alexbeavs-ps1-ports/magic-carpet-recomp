@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Magic Carpet",
+    "id": "SLES-00211",
+    "boot_exe": "SLES_002.11"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Magic Carpet (Europe) (En,Fr,De,Es,Sv).cue",
+    "bin_name": "Magic Carpet (Europe) (En,Fr,De,Es,Sv) (Track 1).bin",
+    "track_counts": [
+      9
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 122266368,
+      "md5": "43f519094389f523147a81aff7a20046",
+      "sha1": "e017102d95d3d838e1468d3fb14974f5012cb94b",
+      "crc32": "c2cb0eaf"
+    },
+    "disc_fp": "b0cdade1692e73a5a59358c47b87f44c8d5233a7adf6d2cdf7047963850b930d"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x80066E14",
+    "text_size": "0x0011B800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 760,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
